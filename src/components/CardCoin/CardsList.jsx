@@ -23,8 +23,7 @@ const CardsList = ({priceArray, resultArray, calcResult}) => {
 		// return <CardCoin key={symbol} symbol={symbol} amount={result.amount} color={color} actual={actual} mid={mid} priceDt={result.price} price={price} tPer={tPer} buys={buys}/>
 	})
 
-	console.log(localCalc)
-	// calcResult(localCalc)
+	calcResult(localCalc)
 
 	return (
 		<ul className="coinLiss__list">
