@@ -48,4 +48,4 @@ export const filterNull = (object) => {
   return newObject
 };
 
-export const getSortFilter = (object) => filterNull(getSortKeys(object));
+export const getFilter = (object) => filterNull(getSortKeys(object));

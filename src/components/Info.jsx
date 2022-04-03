@@ -7,9 +7,8 @@ const Info = ({price, history}) => {
 
 	const calcResult = obj => setResult(obj);
 
-	console.log(1);
 	return (<>
-		{/* <Title result={result}/> */}
+		<Title result={result}/>
 		<CardsList priceArray={price} resultArray={history} calcResult={calcResult}/>
 	</>)
 }

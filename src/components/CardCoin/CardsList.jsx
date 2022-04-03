@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CardCoin from './';
 
 import { rounder } from '../../lib/scripts';
 
 const CardsList = ({priceArray, resultArray, calcResult}) => {
 	const localCalc = {spent: 0, actual: 0 };
+
+	console.log(resultArray);
 
 	const listCardCoin = priceArray.map(({symbol, price})=> {
 		const result = resultArray[symbol];
@@ -20,10 +22,15 @@ const CardsList = ({priceArray, resultArray, calcResult}) => {
     let tPer = rounder((price / (buys / 100)), 1) - 100;
     let color = ' ' + (tPer >= 1 ? 'cGreen' : tPer <= 1 && tPer >= -0.5 ? 'cBlue' : 'cRed');
 
-		// return <CardCoin key={symbol} symbol={symbol} amount={result.amount} color={color} actual={actual} mid={mid} priceDt={result.price} price={price} tPer={tPer} buys={buys}/>
+		return <CardCoin key={symbol} symbol={symbol} amount={result.amount} color={color} actual={actual} mid={mid} priceDt={result.price} price={price} tPer={tPer} buys={buys}/>
 	})
 
-	calcResult(localCalc)
+	useEffect(() => {
+		calcResult(localCalc)
+	
+		return () => {}
+	}, [])
+	
 
 	return (
 		<ul className="coinLiss__list">
