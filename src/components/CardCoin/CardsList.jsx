@@ -6,8 +6,6 @@ import { rounder } from '../../lib/scripts';
 const CardsList = ({priceArray, resultArray, calcResult}) => {
 	const localCalc = {spent: 0, actual: 0 };
 
-	console.log(resultArray);
-
 	const listCardCoin = priceArray.map(({symbol, price})=> {
 		const result = resultArray[symbol];
 
