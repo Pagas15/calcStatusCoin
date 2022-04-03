@@ -17,10 +17,10 @@ const CardsList = ({priceArray, resultArray, calcResult}) => {
 		localCalc.actual += actual
 		
 
-    let tPer = rounder((price / (buys / 100)), 1) - 100;
-    let color = ' ' + (tPer >= 1 ? 'cGreen' : tPer <= 1 && tPer >= -0.5 ? 'cBlue' : 'cRed');
+    let tPercent = rounder((price / (buys / 100)), 1) - 100;
+    let color = ' ' + (tPercent >= 1 ? 'cGreen' : tPercent <= 1 && tPercent >= -0.5 ? 'cBlue' : 'cRed');
 
-		return <CardCoin key={symbol} symbol={symbol} amount={result.amount} color={color} actual={actual} mid={mid} priceDt={result.price} price={price} tPer={tPer} buys={buys}/>
+		return <CardCoin key={symbol} symbol={symbol} amount={result.amount} color={color} actual={actual} mid={mid} priceDt={result.price} price={price} tPercent={tPercent} buys={buys}/>
 	})
 
 	useEffect(() => {
